@@ -1,0 +1,2333 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="en" name="defaultLanguage"/>
+  <meta content="en, es, fr, ja, pt_BR, uk, el, de, zh_Hans, zh_Hant, ru, he, eo, ko" name="availableLanguages"/>
+  <title>
+   beautifulsoup4 · PyPI
+  </title>
+  <meta content="Screen-scraping library" name="description"/>
+  <link href="/static/css/warehouse-ltr.5a90b14c.css" rel="stylesheet"/>
+  <link href="/static/css/fontawesome.da0464c1.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+3:400,400italic,600,600italic,700,700italic%7CSource+Code+Pro:500" rel="stylesheet"/>
+  <noscript>
+   <link href="/static/css/noscript.0673c9ea.css" rel="stylesheet"/>
+  </noscript>
+  <link href="/static/images/favicon.35549fe8.ico" rel="icon" type="image/x-icon"/>
+  <link href="/rss/updates.xml" rel="alternate" title="RSS: 40 latest updates" type="application/rss+xml"/>
+  <link href="/rss/packages.xml" rel="alternate" title="RSS: 40 newest packages" type="application/rss+xml"/>
+  <link href="/rss/project/beautifulsoup4/releases.xml" rel="alternate" title="RSS: latest releases for beautifulsoup4" type="application/rss+xml"/>
+  <link href="https://pypi.org/project/beautifulsoup4/" rel="canonical"/>
+  <meta content="https://pypi.org/project/beautifulsoup4/" property="og:url"/>
+  <meta content="PyPI" property="og:site_name"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://pypi.org/static/images/twitter.abaf4b19.webp" property="og:image"/>
+  <meta content="beautifulsoup4" property="og:title"/>
+  <meta content="Screen-scraping library" property="og:description"/>
+  <link href="/opensearch.xml" rel="search" title="PyPI" type="application/opensearchdescription+xml"/>
+  <script async="" data-ga-id="UA-55961911-1" data-ga4-id="G-RW7D75DF8V" src="/static/js/warehouse.f780b8ef.js">
+  </script>
+  <script>
+   MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+};
+  </script>
+  <script async="" crossorigin="anonymous" integrity="sha256-1CldwzdEg2k1wTmf7s5RWVd7NMXI/7nxxjJM2C4DqII=" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js">
+  </script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-55961911-1">
+  </script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RW7D75DF8V">
+  </script>
+  <script defer="" src="https://www.fastly-insights.com/insights.js?k=6a52360a-f306-421e-8ed5-7417d0d4a4e9&amp;dnt=true">
+  </script>
+  <script async="" crossorigin="anonymous" integrity="sha256-U3hKDidudIaxBDEzwGJApJgPEf2mWk6cfMWghrAa6i0= sha384-UcmsCqcNRSLW/dV3Lo1oCi2/VaurXbib6p4HyUEOeIa/4OpsrnucrugAefzVZJfI sha512-q4t1L4xEjGV2R4hzqCa41P8jrgFUS8xTb8rdNv4FGvw7FpydVj/kkxBJHOiaoxHa8olCcx1Slk9K+3sNbsM4ug==" src="https://media.ethicalads.io/media/client/v1.4.0/ethicalads.min.js">
+  </script>
+ </head>
+ <body data-controller="viewport-toggle">
+  <!-- Accessibility: this link should always be the first piece of content inside the body-->
+  <a class="skip-to-content" href="#content">
+   Skip to main content
+  </a>
+  <button class="button button--primary button--switch-to-mobile hidden" data-action="viewport-toggle#switchToMobile" data-viewport-toggle-target="switchToMobile" type="button">
+   Switch to mobile version
+  </button>
+  <div class="stick-to-top js-stick-to-top" id="sticky-notifications">
+   <!-- Add browser warning. Will show for ie9 and below -->
+   <!--[if IE]>
+      <div class="notification-bar notification-bar--warning" role="status">
+        <span class="notification-bar__icon">
+          <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+          <span class="sr-only">Warning</span>
+        </span>
+        <span class="notification-bar__message">You are using an unsupported browser, upgrade to a newer version.</span>
+      </div>
+      <![endif]-->
+   <noscript>
+    <div class="notification-bar notification-bar--warning" role="status">
+     <span class="notification-bar__icon">
+      <i aria-hidden="true" class="fa fa-exclamation-triangle">
+      </i>
+      <span class="sr-only">
+       Warning
+      </span>
+     </span>
+     <span class="notification-bar__message">
+      Some features may not work without JavaScript. Please try enabling it if you encounter problems.
+     </span>
+    </div>
+   </noscript>
+   <div data-html-include="/_includes/notification-banners/">
+   </div>
+  </div>
+  <div data-html-include="/_includes/flash-messages/">
+  </div>
+  <div data-html-include="/_includes/session-notifications/">
+  </div>
+  <header class="site-header">
+   <div class="site-container">
+    <div class="split-layout">
+     <div class="split-layout">
+      <div>
+       <a class="site-header__logo" href="/">
+        <img alt="PyPI" src="/static/images/logo-small.8998e9d1.svg"/>
+       </a>
+      </div>
+      <form action="/search/" class="search-form search-form--primary" role="search">
+       <label class="sr-only" for="search">
+        Search PyPI
+       </label>
+       <input autocapitalize="off" autocomplete="off" class="search-form__search" data-action="keydown@window-&gt;search-focus#focusSearchField" data-controller="search-focus" data-search-focus-target="searchField" id="search" name="q" placeholder="Search projects" spellcheck="false" type="text" value=""/>
+       <button class="search-form__button" type="submit">
+        <i aria-hidden="true" class="fa fa-search">
+        </i>
+        <span class="sr-only">
+         Search
+        </span>
+       </button>
+      </form>
+     </div>
+     <div data-html-include="/_includes/current-user-indicator/">
+      <div class="horizontal-menu horizontal-menu--light horizontal-menu--tall" id="user-indicator">
+       <nav aria-label="Main navigation" class="horizontal-menu horizontal-menu--light horizontal-menu--tall hide-on-tablet">
+        <ul>
+         <li class="horizontal-menu__item">
+          <a class="horizontal-menu__link" href="/help/">
+           Help
+          </a>
+         </li>
+         <li class="horizontal-menu__item">
+          <a class="horizontal-menu__link" href="/sponsors/">
+           Sponsors
+          </a>
+         </li>
+         <li class="horizontal-menu__item">
+          <a class="horizontal-menu__link" href="/account/login/">
+           Log in
+          </a>
+         </li>
+         <li class="horizontal-menu__item">
+          <a class="horizontal-menu__link" href="/account/register/">
+           Register
+          </a>
+         </li>
+        </ul>
+       </nav>
+       <nav aria-label="Main navigation" class="dropdown dropdown--on-menu hidden show-on-tablet">
+        <button aria-expanded="false" aria-haspopup="true" aria-label="View menu" class="horizontal-menu__link dropdown__trigger" type="button">
+         Menu
+         <span class="dropdown__trigger-caret">
+          <i aria-hidden="true" class="fa fa-caret-down">
+          </i>
+         </span>
+        </button>
+        <ul aria-hidden="true" aria-label="Main menu" class="dropdown__content">
+         <li>
+          <a class="dropdown__link" href="/help/">
+           Help
+          </a>
+         </li>
+         <li>
+          <a class="dropdown__link" href="/sponsors/">
+           Sponsors
+          </a>
+         </li>
+         <li>
+          <a class="dropdown__link" href="/account/login/">
+           Log in
+          </a>
+         </li>
+         <li>
+          <a class="dropdown__link" href="/account/register/">
+           Register
+          </a>
+         </li>
+        </ul>
+       </nav>
+      </div>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="mobile-search">
+   <form action="/search/" class="search-form search-form--fullwidth" role="search">
+    <label class="sr-only" for="mobile-search">
+     Search PyPI
+    </label>
+    <input autocapitalize="off" autocomplete="off" class="search-form__search" id="mobile-search" name="q" placeholder="Search projects" spellcheck="false" type="text" value=""/>
+    <button class="search-form__button" type="submit">
+     <i aria-hidden="true" class="fa fa-search">
+     </i>
+     <span class="sr-only">
+      Search
+     </span>
+    </button>
+   </form>
+  </div>
+  <main id="content">
+   <div class="banner">
+    <div class="package-header">
+     <div class="package-header__left">
+      <h1 class="package-header__name">
+       beautifulsoup4 4.12.3
+      </h1>
+      <div data-controller="clipboard">
+       <p class="package-header__pip-instructions">
+        <span data-clipboard-target="source" id="pip-command">
+         pip install beautifulsoup4
+        </span>
+        <button class="copy-tooltip copy-tooltip-s" data-action="clipboard#copy" data-clipboard-target="tooltip" data-clipboard-tooltip-value="Copy to clipboard" type="button">
+         <i aria-hidden="true" class="fa fa-copy">
+         </i>
+         <span class="sr-only">
+          Copy PIP instructions
+         </span>
+        </button>
+       </p>
+      </div>
+     </div>
+     <div class="package-header__right">
+      <a class="status-badge status-badge--good" href="/project/beautifulsoup4/">
+       <span>
+        Latest version
+       </span>
+      </a>
+      <p class="package-header__date">
+       Released:
+       <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2024-01-17T16:53:12+0000">
+        Jan 17, 2024
+       </time>
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="horizontal-section horizontal-section--grey horizontal-section--thin">
+    <div class="site-container">
+     <div data-html-include="/_includes/administer-project-include/beautifulsoup4">
+     </div>
+     <div class="split-layout split-layout--middle package-description">
+      <p class="package-description__summary">
+       Screen-scraping library
+      </p>
+      <div data-html-include="/_includes/edit-project-button/beautifulsoup4">
+      </div>
+     </div>
+    </div>
+   </div>
+   <div data-controller="project-tabs">
+    <div class="tabs-container">
+     <div class="vertical-tabs">
+      <div class="vertical-tabs__tabs">
+       <div class="sidebar-section">
+        <h3 class="sidebar-section__title">
+         Navigation
+        </h3>
+        <nav aria-label="Navigation for beautifulsoup4">
+         <ul class="vertical-tabs__list" role="tablist">
+          <li role="tab">
+           <a aria-label="Project description. Focus will be moved to the description." aria-selected="true" class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--is-active" data-action="project-tabs#onTabClick" data-project-tabs-target="tab" href="#description" id="description-tab">
+            <i aria-hidden="true" class="fa fa-align-left">
+            </i>
+            Project description
+           </a>
+          </li>
+          <li role="tab">
+           <a aria-label="Release history. Focus will be moved to the history panel." class="vertical-tabs__tab vertical-tabs__tab--with-icon" data-action="project-tabs#onTabClick" data-project-tabs-target="tab" href="#history" id="history-tab">
+            <i aria-hidden="true" class="fa fa-history">
+            </i>
+            Release history
+           </a>
+          </li>
+          <li role="tab">
+           <a aria-label="Download files. Focus will be moved to the project files." class="vertical-tabs__tab vertical-tabs__tab--with-icon" data-action="project-tabs#onTabClick" data-project-tabs-target="tab" href="#files" id="files-tab">
+            <i aria-hidden="true" class="fa fa-download">
+            </i>
+            Download files
+           </a>
+          </li>
+         </ul>
+        </nav>
+       </div>
+       <div class="sidebar-section verified">
+        <h3 class="sidebar-section__title">
+         Verified details
+         <i class="fa fa-circle-check check" title="Verified by PyPI on 2024-01-17">
+         </i>
+        </h3>
+        <small>
+         <i>
+          These details have been
+          <a href="https://docs.pypi.org/project_metadata/#verified-details">
+           verified by PyPI
+          </a>
+         </i>
+        </small>
+        <h6>
+         Maintainers
+        </h6>
+        <span class="sidebar-section__maintainer">
+         <a aria-label="" href="/user/leonard/">
+          <span class="sidebar-section__user-gravatar">
+           <img alt="Avatar for leonard from gravatar.com" height="50" src="https://pypi-camo.freetls.fastly.net/c5caa34d0062a04d6d09cab71355954f188822a3/68747470733a2f2f7365637572652e67726176617461722e636f6d2f6176617461722f62383361616135653563383132393938376338633534663239373465383464333f73697a653d3530" title="Avatar for leonard from gravatar.com" width="50"/>
+          </span>
+          <span class="sidebar-section__user-gravatar-text">
+           leonard
+          </span>
+         </a>
+        </span>
+       </div>
+       <div class="sidebar-section unverified">
+        <h3 class="sidebar-section__title">
+         Unverified details
+        </h3>
+        <small>
+         <i>
+          These details have
+          <b>
+           not
+          </b>
+          been verified by PyPI
+         </i>
+        </small>
+        <h6>
+         Project links
+        </h6>
+        <ul class="vertical-tabs__list">
+         <li>
+          <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" href="https://www.crummy.com/software/BeautifulSoup/bs4/download/" rel="nofollow">
+           <i aria-hidden="true" class="fas fa-cloud-download-alt">
+           </i>
+           Download
+          </a>
+         </li>
+         <li>
+          <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" href="https://www.crummy.com/software/BeautifulSoup/bs4/" rel="nofollow">
+           <i aria-hidden="true" class="fas fa-home">
+           </i>
+           Homepage
+          </a>
+         </li>
+        </ul>
+        <div class="sidebar-section unverified">
+         <h6>
+          Meta
+         </h6>
+         <ul>
+          <li>
+           <span>
+            <strong>
+             License:
+            </strong>
+            MIT License (MIT License)
+           </span>
+          </li>
+          <li>
+           <span>
+            <strong>
+             Author:
+            </strong>
+            <a href="mailto:leonardr@segfault.org">
+             Leonard Richardson
+            </a>
+           </span>
+          </li>
+          <li class="tags">
+           <span>
+            <i aria-hidden="true" class="fa fa-tags">
+            </i>
+            <span class="sr-only">
+             Tags
+            </span>
+            <span class="package-keyword">
+             HTML,
+            </span>
+            <span class="package-keyword">
+             XML,
+            </span>
+            <span class="package-keyword">
+             parse,
+            </span>
+            <span class="package-keyword">
+             soup
+            </span>
+           </span>
+          </li>
+          <li>
+           <span>
+            <strong>
+             Requires:
+            </strong>
+            Python &gt;=3.6.0
+           </span>
+          </li>
+         </ul>
+        </div>
+        <div class="sidebar-section unverified">
+         <h6 class="sidebar-section__title">
+          Classifiers
+         </h6>
+         <ul class="sidebar-section__classifiers">
+          <li>
+           <strong>
+            Development Status
+           </strong>
+           <ul>
+            <li>
+             <a href="/search/?c=Development+Status+%3A%3A+5+-+Production%2FStable">
+              5 - Production/Stable
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <strong>
+            Intended Audience
+           </strong>
+           <ul>
+            <li>
+             <a href="/search/?c=Intended+Audience+%3A%3A+Developers">
+              Developers
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <strong>
+            License
+           </strong>
+           <ul>
+            <li>
+             <a href="/search/?c=License+%3A%3A+OSI+Approved+%3A%3A+MIT+License">
+              OSI Approved :: MIT License
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <strong>
+            Programming Language
+           </strong>
+           <ul>
+            <li>
+             <a href="/search/?c=Programming+Language+%3A%3A+Python">
+              Python
+             </a>
+            </li>
+            <li>
+             <a href="/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3">
+              Python :: 3
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li>
+           <strong>
+            Topic
+           </strong>
+           <ul>
+            <li>
+             <a href="/search/?c=Topic+%3A%3A+Software+Development+%3A%3A+Libraries+%3A%3A+Python+Modules">
+              Software Development :: Libraries :: Python Modules
+             </a>
+            </li>
+            <li>
+             <a href="/search/?c=Topic+%3A%3A+Text+Processing+%3A%3A+Markup+%3A%3A+HTML">
+              Text Processing :: Markup :: HTML
+             </a>
+            </li>
+            <li>
+             <a href="/search/?c=Topic+%3A%3A+Text+Processing+%3A%3A+Markup+%3A%3A+SGML">
+              Text Processing :: Markup :: SGML
+             </a>
+            </li>
+            <li>
+             <a href="/search/?c=Topic+%3A%3A+Text+Processing+%3A%3A+Markup+%3A%3A+XML">
+              Text Processing :: Markup :: XML
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="sidebar-section" data-ea-keywords="pypi-sidebar" data-ea-publisher="psf" data-ea-type="psf">
+       </div>
+       <div data-html-include="https://pypi.org/_includes/submit-malware-report/beautifulsoup4">
+       </div>
+      </div>
+      <div class="vertical-tabs__panel">
+       <!-- mobile menu -->
+       <nav aria-label="Navigation for beautifulsoup4">
+        <ul class="vertical-tabs__list" role="tablist">
+         <li role="tab">
+          <a aria-label="Project description. Focus will be moved to the description." aria-selected="true" class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--mobile vertical-tabs__tab--no-top-border vertical-tabs__tab--is-active" data-action="project-tabs#onTabClick" data-project-tabs-target="mobileTab" href="#description" id="mobile-description-tab">
+           <i aria-hidden="true" class="fa fa-align-left">
+           </i>
+           Project description
+          </a>
+         </li>
+         <li role="tab">
+          <a aria-label="Project details. Focus will be moved to the project details." class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--mobile" data-action="project-tabs#onTabClick" data-project-tabs-target="mobileTab" href="#data" id="mobile-data-tab">
+           <i aria-hidden="true" class="fa fa-info-circle">
+           </i>
+           Project details
+          </a>
+         </li>
+         <li role="tab">
+          <a aria-label="Release history. Focus will be moved to the history panel." class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--mobile" data-action="project-tabs#onTabClick" data-project-tabs-target="mobileTab" href="#history" id="mobile-history-tab">
+           <i aria-hidden="true" class="fa fa-history">
+           </i>
+           Release history
+          </a>
+         </li>
+         <li role="tab">
+          <a aria-label="Download files. Focus will be moved to the project files." class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--mobile" data-action="project-tabs#onTabClick" data-project-tabs-target="mobileTab" href="#files" id="mobile-files-tab">
+           <i aria-hidden="true" class="fa fa-download">
+           </i>
+           Download files
+          </a>
+         </li>
+        </ul>
+       </nav>
+       <div aria-labelledby="description-tab mobile-description-tab" class="vertical-tabs__content" data-project-tabs-target="content" id="description" role="tabpanel" tabindex="-1">
+        <h2 class="page-title">
+         Project description
+        </h2>
+        <div class="project-description">
+         <p>
+          Beautiful Soup is a library that makes it easy to scrape information
+from web pages. It sits atop an HTML or XML parser, providing Pythonic
+idioms for iterating, searching, and modifying the parse tree.
+         </p>
+         <h1>
+          Quick start
+         </h1>
+         <pre><code>&gt;&gt;&gt; from bs4 import BeautifulSoup
+&gt;&gt;&gt; soup = BeautifulSoup("&lt;p&gt;Some&lt;b&gt;bad&lt;i&gt;HTML")
+&gt;&gt;&gt; print(soup.prettify())
+&lt;html&gt;
+ &lt;body&gt;
+  &lt;p&gt;
+   Some
+   &lt;b&gt;
+    bad
+    &lt;i&gt;
+     HTML
+    &lt;/i&gt;
+   &lt;/b&gt;
+  &lt;/p&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+&gt;&gt;&gt; soup.find(text="bad")
+'bad'
+&gt;&gt;&gt; soup.i
+&lt;i&gt;HTML&lt;/i&gt;
+#
+&gt;&gt;&gt; soup = BeautifulSoup("&lt;tag1&gt;Some&lt;tag2/&gt;bad&lt;tag3&gt;XML", "xml")
+#
+&gt;&gt;&gt; print(soup.prettify())
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;tag1&gt;
+ Some
+ &lt;tag2/&gt;
+ bad
+ &lt;tag3&gt;
+  XML
+ &lt;/tag3&gt;
+&lt;/tag1&gt;
+</code></pre>
+         <p>
+          To go beyond the basics,
+          <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" rel="nofollow">
+           comprehensive documentation is available
+          </a>
+          .
+         </p>
+         <h1>
+          Links
+         </h1>
+         <ul>
+          <li>
+           <a href="https://www.crummy.com/software/BeautifulSoup/bs4/" rel="nofollow">
+            Homepage
+           </a>
+          </li>
+          <li>
+           <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" rel="nofollow">
+            Documentation
+           </a>
+          </li>
+          <li>
+           <a href="https://groups.google.com/group/beautifulsoup/" rel="nofollow">
+            Discussion group
+           </a>
+          </li>
+          <li>
+           <a href="https://code.launchpad.net/beautifulsoup/" rel="nofollow">
+            Development
+           </a>
+          </li>
+          <li>
+           <a href="https://bugs.launchpad.net/beautifulsoup/" rel="nofollow">
+            Bug tracker
+           </a>
+          </li>
+          <li>
+           <a href="https://bazaar.launchpad.net/~leonardr/beautifulsoup/bs4/view/head:/CHANGELOG" rel="nofollow">
+            Complete changelog
+           </a>
+          </li>
+         </ul>
+         <h1>
+          Note on Python 2 sunsetting
+         </h1>
+         <p>
+          Beautiful Soup's support for Python 2 was discontinued on December 31,
+2020: one year after the sunset date for Python 2 itself. From this
+point onward, new Beautiful Soup development will exclusively target
+Python 3. The final release of Beautiful Soup 4 to support Python 2
+was 4.9.3.
+         </p>
+         <h1>
+          Supporting the project
+         </h1>
+         <p>
+          If you use Beautiful Soup as part of your professional work, please consider a
+          <a href="https://tidelift.com/subscription/pkg/pypi-beautifulsoup4?utm_source=pypi-beautifulsoup4&amp;utm_medium=referral&amp;utm_campaign=readme" rel="nofollow">
+           Tidelift subscription
+          </a>
+          .
+This will support many of the free software projects your organization
+depends on, not just Beautiful Soup.
+         </p>
+         <p>
+          If you use Beautiful Soup for personal projects, the best way to say
+thank you is to read
+          <a href="https://www.crummy.com/software/BeautifulSoup/zine/" rel="nofollow">
+           Tool Safety
+          </a>
+          , a zine I
+wrote about what Beautiful Soup has taught me about software
+development.
+         </p>
+         <h1>
+          Building the documentation
+         </h1>
+         <p>
+          The bs4/doc/ directory contains full documentation in Sphinx
+format. Run
+          <code>
+           make html
+          </code>
+          in that directory to create HTML
+documentation.
+         </p>
+         <h1>
+          Running the unit tests
+         </h1>
+         <p>
+          Beautiful Soup supports unit test discovery using Pytest:
+         </p>
+         <pre><code>$ pytest
+</code></pre>
+        </div>
+       </div>
+       <div aria-labelledby="mobile-data-tab" class="vertical-tabs__content" data-project-tabs-target="content" id="data" role="tabpanel" tabindex="-1">
+        <h2 class="page-title">
+         Project details
+        </h2>
+        <div class="sidebar-section verified">
+         <h3 class="sidebar-section__title">
+          Verified details
+          <i class="fa fa-circle-check check" title="Verified by PyPI on 2024-01-17">
+          </i>
+         </h3>
+         <small>
+          <i>
+           These details have been
+           <a href="https://docs.pypi.org/project_metadata/#verified-details">
+            verified by PyPI
+           </a>
+          </i>
+         </small>
+         <h6>
+          Maintainers
+         </h6>
+         <span class="sidebar-section__maintainer">
+          <a aria-label="" href="/user/leonard/">
+           <span class="sidebar-section__user-gravatar">
+            <img alt="Avatar for leonard from gravatar.com" height="50" src="https://pypi-camo.freetls.fastly.net/c5caa34d0062a04d6d09cab71355954f188822a3/68747470733a2f2f7365637572652e67726176617461722e636f6d2f6176617461722f62383361616135653563383132393938376338633534663239373465383464333f73697a653d3530" title="Avatar for leonard from gravatar.com" width="50"/>
+           </span>
+           <span class="sidebar-section__user-gravatar-text">
+            leonard
+           </span>
+          </a>
+         </span>
+        </div>
+        <div class="sidebar-section unverified">
+         <h3 class="sidebar-section__title">
+          Unverified details
+         </h3>
+         <small>
+          <i>
+           These details have
+           <b>
+            not
+           </b>
+           been verified by PyPI
+          </i>
+         </small>
+         <h6>
+          Project links
+         </h6>
+         <ul class="vertical-tabs__list">
+          <li>
+           <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" href="https://www.crummy.com/software/BeautifulSoup/bs4/download/" rel="nofollow">
+            <i aria-hidden="true" class="fas fa-cloud-download-alt">
+            </i>
+            Download
+           </a>
+          </li>
+          <li>
+           <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" href="https://www.crummy.com/software/BeautifulSoup/bs4/" rel="nofollow">
+            <i aria-hidden="true" class="fas fa-home">
+            </i>
+            Homepage
+           </a>
+          </li>
+         </ul>
+         <div class="sidebar-section unverified">
+          <h6>
+           Meta
+          </h6>
+          <ul>
+           <li>
+            <span>
+             <strong>
+              License:
+             </strong>
+             MIT License (MIT License)
+            </span>
+           </li>
+           <li>
+            <span>
+             <strong>
+              Author:
+             </strong>
+             <a href="mailto:leonardr@segfault.org">
+              Leonard Richardson
+             </a>
+            </span>
+           </li>
+           <li class="tags">
+            <span>
+             <i aria-hidden="true" class="fa fa-tags">
+             </i>
+             <span class="sr-only">
+              Tags
+             </span>
+             <span class="package-keyword">
+              HTML,
+             </span>
+             <span class="package-keyword">
+              XML,
+             </span>
+             <span class="package-keyword">
+              parse,
+             </span>
+             <span class="package-keyword">
+              soup
+             </span>
+            </span>
+           </li>
+           <li>
+            <span>
+             <strong>
+              Requires:
+             </strong>
+             Python &gt;=3.6.0
+            </span>
+           </li>
+          </ul>
+         </div>
+         <div class="sidebar-section unverified">
+          <h6 class="sidebar-section__title">
+           Classifiers
+          </h6>
+          <ul class="sidebar-section__classifiers">
+           <li>
+            <strong>
+             Development Status
+            </strong>
+            <ul>
+             <li>
+              <a href="/search/?c=Development+Status+%3A%3A+5+-+Production%2FStable">
+               5 - Production/Stable
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <strong>
+             Intended Audience
+            </strong>
+            <ul>
+             <li>
+              <a href="/search/?c=Intended+Audience+%3A%3A+Developers">
+               Developers
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <strong>
+             License
+            </strong>
+            <ul>
+             <li>
+              <a href="/search/?c=License+%3A%3A+OSI+Approved+%3A%3A+MIT+License">
+               OSI Approved :: MIT License
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <strong>
+             Programming Language
+            </strong>
+            <ul>
+             <li>
+              <a href="/search/?c=Programming+Language+%3A%3A+Python">
+               Python
+              </a>
+             </li>
+             <li>
+              <a href="/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3">
+               Python :: 3
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <strong>
+             Topic
+            </strong>
+            <ul>
+             <li>
+              <a href="/search/?c=Topic+%3A%3A+Software+Development+%3A%3A+Libraries+%3A%3A+Python+Modules">
+               Software Development :: Libraries :: Python Modules
+              </a>
+             </li>
+             <li>
+              <a href="/search/?c=Topic+%3A%3A+Text+Processing+%3A%3A+Markup+%3A%3A+HTML">
+               Text Processing :: Markup :: HTML
+              </a>
+             </li>
+             <li>
+              <a href="/search/?c=Topic+%3A%3A+Text+Processing+%3A%3A+Markup+%3A%3A+SGML">
+               Text Processing :: Markup :: SGML
+              </a>
+             </li>
+             <li>
+              <a href="/search/?c=Topic+%3A%3A+Text+Processing+%3A%3A+Markup+%3A%3A+XML">
+               Text Processing :: Markup :: XML
+              </a>
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </div>
+        </div>
+        <br/>
+       </div>
+       <div aria-labelledby="history-tab mobile-history-tab" class="vertical-tabs__content" data-project-tabs-target="content" id="history" role="tabpanel" tabindex="-1">
+        <h2 class="page-title split-layout">
+         <span>
+          Release history
+         </span>
+         <span class="reset-text margin-top">
+          <a href="/help/#project-release-notifications">
+           Release notifications
+          </a>
+          |
+          <a href="/rss/project/beautifulsoup4/releases.xml">
+           RSS feed
+           <i aria-hidden="true" class="fa fa-rss">
+           </i>
+          </a>
+         </span>
+        </h2>
+        <div class="release-timeline">
+         <div class="release release--latest">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.13.0b2/">
+           <p class="release__version">
+            4.13.0b2
+            <span class="badge badge--warning">
+             pre-release
+            </span>
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2024-03-20T13:00:31+0000">
+             Mar 20, 2024
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release release--current">
+          <div class="release__meta">
+           <span class="badge">
+            This version
+           </span>
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/blue-cube.572a5bfb.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.12.3/">
+           <p class="release__version">
+            4.12.3
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2024-01-17T16:53:12+0000">
+             Jan 17, 2024
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.12.2/">
+           <p class="release__version">
+            4.12.2
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2023-04-07T15:02:49+0000">
+             Apr 7, 2023
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.12.1/">
+           <p class="release__version">
+            4.12.1
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2023-04-05T14:44:37+0000">
+             Apr 5, 2023
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.12.0/">
+           <p class="release__version">
+            4.12.0
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2023-03-20T11:46:29+0000">
+             Mar 20, 2023
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.11.2/">
+           <p class="release__version">
+            4.11.2
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2023-01-31T17:59:12+0000">
+             Jan 31, 2023
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.11.1/">
+           <p class="release__version">
+            4.11.1
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2022-04-08T21:22:46+0000">
+             Apr 8, 2022
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.11.0/">
+           <p class="release__version">
+            4.11.0
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2022-04-07T23:23:18+0000">
+             Apr 7, 2022
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.10.0/">
+           <p class="release__version">
+            4.10.0
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2021-09-08T00:16:06+0000">
+             Sep 8, 2021
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.9.3/">
+           <p class="release__version">
+            4.9.3
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2020-10-03T15:37:19+0000">
+             Oct 3, 2020
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.9.2/">
+           <p class="release__version">
+            4.9.2
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2020-09-26T15:51:07+0000">
+             Sep 26, 2020
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.9.1/">
+           <p class="release__version">
+            4.9.1
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2020-05-17T18:24:02+0000">
+             May 17, 2020
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.9.0/">
+           <p class="release__version">
+            4.9.0
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2020-04-05T19:58:20+0000">
+             Apr 5, 2020
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.8.2/">
+           <p class="release__version">
+            4.8.2
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2019-12-24T22:28:18+0000">
+             Dec 24, 2019
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.8.1/">
+           <p class="release__version">
+            4.8.1
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2019-10-06T14:37:36+0000">
+             Oct 6, 2019
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.8.0/">
+           <p class="release__version">
+            4.8.0
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2019-07-20T11:31:22+0000">
+             Jul 20, 2019
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.7.1/">
+           <p class="release__version">
+            4.7.1
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2019-01-07T00:53:18+0000">
+             Jan 7, 2019
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.7.0/">
+           <p class="release__version">
+            4.7.0
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2018-12-31T17:51:20+0000">
+             Dec 31, 2018
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.6.3/">
+           <p class="release__version">
+            4.6.3
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2018-08-12T16:39:46+0000">
+             Aug 12, 2018
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.6.2/">
+           <p class="release__version">
+            4.6.2
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2018-08-12T15:04:59+0000">
+             Aug 12, 2018
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.6.1/">
+           <p class="release__version">
+            4.6.1
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2018-07-28T23:39:05+0000">
+             Jul 28, 2018
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.6.0/">
+           <p class="release__version">
+            4.6.0
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2017-05-07T13:52:31+0000">
+             May 7, 2017
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.5.3/">
+           <p class="release__version">
+            4.5.3
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2017-01-02T15:08:00+0000">
+             Jan 2, 2017
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.5.2/">
+           <p class="release__version">
+            4.5.2
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2017-01-02T14:55:08+0000">
+             Jan 2, 2017
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.5.1/">
+           <p class="release__version">
+            4.5.1
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2016-08-03T02:43:11+0000">
+             Aug 3, 2016
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.5.0/">
+           <p class="release__version">
+            4.5.0
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2016-07-20T10:37:57+0000">
+             Jul 20, 2016
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.4.1/">
+           <p class="release__version">
+            4.4.1
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2015-09-29T00:19:38+0000">
+             Sep 29, 2015
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.4.0/">
+           <p class="release__version">
+            4.4.0
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2015-07-03T15:22:53+0000">
+             Jul 3, 2015
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.3.2/">
+           <p class="release__version">
+            4.3.2
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2013-10-02T12:37:31+0000">
+             Oct 2, 2013
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.3.1/">
+           <p class="release__version">
+            4.3.1
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2014-01-21T05:35:47+0000">
+             Jan 21, 2014
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.3.0/">
+           <p class="release__version">
+            4.3.0
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2014-01-21T05:35:43+0000">
+             Jan 21, 2014
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.2.1/">
+           <p class="release__version">
+            4.2.1
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2014-01-21T05:35:40+0000">
+             Jan 21, 2014
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.2.0/">
+           <p class="release__version">
+            4.2.0
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2014-01-21T05:35:37+0000">
+             Jan 21, 2014
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.1.3/">
+           <p class="release__version">
+            4.1.3
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2014-01-21T05:35:34+0000">
+             Jan 21, 2014
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.1.2/">
+           <p class="release__version">
+            4.1.2
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2014-01-21T05:35:30+0000">
+             Jan 21, 2014
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.1.1/">
+           <p class="release__version">
+            4.1.1
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2014-01-21T05:35:27+0000">
+             Jan 21, 2014
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.1.0/">
+           <p class="release__version">
+            4.1.0
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2014-01-21T05:35:24+0000">
+             Jan 21, 2014
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.0.5/">
+           <p class="release__version">
+            4.0.5
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2014-01-21T05:35:20+0000">
+             Jan 21, 2014
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.0.4/">
+           <p class="release__version">
+            4.0.4
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2014-01-21T05:35:15+0000">
+             Jan 21, 2014
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.0.3/">
+           <p class="release__version">
+            4.0.3
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2014-01-21T05:35:12+0000">
+             Jan 21, 2014
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.0.2/">
+           <p class="release__version">
+            4.0.2
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2014-01-21T05:35:07+0000">
+             Jan 21, 2014
+            </time>
+           </p>
+          </a>
+         </div>
+         <div class="release release--oldest">
+          <div class="release__meta">
+          </div>
+          <div class="release__graphic">
+           <div class="release__line">
+           </div>
+           <img alt="" class="release__node" src="https://pypi.org/static/images/white-cube.2351a86c.svg"/>
+          </div>
+          <a class="card release__card" href="/project/beautifulsoup4/4.0.1/">
+           <p class="release__version">
+            4.0.1
+           </p>
+           <p class="release__version-date">
+            <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2014-01-21T05:35:03+0000">
+             Jan 21, 2014
+            </time>
+           </p>
+          </a>
+         </div>
+        </div>
+       </div>
+       <div aria-labelledby="files-tab mobile-files-tab" class="vertical-tabs__content" data-project-tabs-target="content" id="files" role="tabpanel" tabindex="-1">
+        <h2 class="page-title">
+         Download files
+        </h2>
+        <p>
+         Download the file for your platform. If you're not sure which to choose, learn more about
+         <a href="https://packaging.python.org/tutorials/installing-packages/" rel="noopener" target="_blank" title="External link">
+          installing packages
+         </a>
+         .
+        </p>
+        <h3>
+         Source Distribution
+        </h3>
+        <div class="file">
+         <div class="file__graphic">
+          <i aria-hidden="true" class="far fa-file">
+          </i>
+         </div>
+         <div class="card file__card">
+          <a href="https://files.pythonhosted.org/packages/b3/ca/824b1195773ce6166d388573fc106ce56d4a805bd7427b624e063596ec58/beautifulsoup4-4.12.3.tar.gz">
+           beautifulsoup4-4.12.3.tar.gz
+          </a>
+          (581.2 kB
+          <a data-action="project-tabs#onTabClick" data-project-tabs-target="tab" href="#beautifulsoup4-4.12.3.tar.gz">
+           view details
+          </a>
+          )
+          <p class="file__meta">
+           Uploaded
+           <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2024-01-17T16:53:17+0000">
+            Jan 17, 2024
+           </time>
+           <code>
+            Source
+           </code>
+          </p>
+         </div>
+        </div>
+        <h3>
+         Built Distribution
+        </h3>
+        <div class="file">
+         <div class="file__graphic">
+          <i aria-hidden="true" class="far fa-file">
+          </i>
+         </div>
+         <div class="card file__card">
+          <a href="https://files.pythonhosted.org/packages/b1/fe/e8c672695b37eecc5cbf43e1d0638d88d66ba3a44c4d321c796f4e59167f/beautifulsoup4-4.12.3-py3-none-any.whl">
+           beautifulsoup4-4.12.3-py3-none-any.whl
+          </a>
+          (147.9 kB
+          <a data-action="project-tabs#onTabClick" data-project-tabs-target="tab" href="#beautifulsoup4-4.12.3-py3-none-any.whl">
+           view details
+          </a>
+          )
+          <p class="file__meta">
+           Uploaded
+           <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2024-01-17T16:53:12+0000">
+            Jan 17, 2024
+           </time>
+           <code>
+            Python 3
+           </code>
+          </p>
+         </div>
+        </div>
+       </div>
+       <div aria-labelledby="file-tab mobile-file-tab" class="vertical-tabs__content" data-project-tabs-target="content" id="beautifulsoup4-4.12.3.tar.gz" role="tabpanel" tabindex="-1">
+        <h2 class="page-title">
+         File details
+        </h2>
+        <p>
+         Details for the file
+         <code>
+          beautifulsoup4-4.12.3.tar.gz
+         </code>
+         .
+        </p>
+        <h3>
+         File metadata
+        </h3>
+        <div>
+         <ul>
+          <li>
+           Download URL:
+           <a href="https://files.pythonhosted.org/packages/b3/ca/824b1195773ce6166d388573fc106ce56d4a805bd7427b624e063596ec58/beautifulsoup4-4.12.3.tar.gz">
+            beautifulsoup4-4.12.3.tar.gz
+           </a>
+          </li>
+          <li>
+           Upload date:
+           <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2024-01-17T16:53:17+0000">
+            Jan 17, 2024
+           </time>
+          </li>
+          <li>
+           Size: 581.2 kB
+          </li>
+          <li>
+           Tags: Source
+          </li>
+          <li>
+           Uploaded using Trusted Publishing? No
+          </li>
+          <li>
+           Uploaded via: python-httpx/0.26.0
+          </li>
+         </ul>
+        </div>
+        <h3>
+         File hashes
+        </h3>
+        <div>
+         <table class="table table--hashes">
+          <caption class="sr-only">
+           Hashes for beautifulsoup4-4.12.3.tar.gz
+          </caption>
+          <thead>
+           <tr>
+            <th scope="col">
+             Algorithm
+            </th>
+            <th scope="col">
+             Hash digest
+            </th>
+            <th>
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr data-controller="clipboard">
+            <th scope="row">
+             SHA256
+            </th>
+            <td>
+             <code data-clipboard-target="source">
+              74e3d1928edc070d21748185c46e3fb33490f22f52a3addee9aee0f4f7781051
+             </code>
+            </td>
+            <td class="table__align-right">
+             <button class="button button--small copy-tooltip copy-tooltip-w" data-action="clipboard#copy" data-clipboard-target="tooltip" data-clipboard-tooltip-value="Copy to clipboard" type="button">
+              Copy
+             </button>
+            </td>
+           </tr>
+           <tr data-controller="clipboard">
+            <th scope="row">
+             MD5
+            </th>
+            <td>
+             <code data-clipboard-target="source">
+              4ecf1fb561e84adfb3146650e3d51394
+             </code>
+            </td>
+            <td class="table__align-right">
+             <button class="button button--small copy-tooltip copy-tooltip-w" data-action="clipboard#copy" data-clipboard-target="tooltip" data-clipboard-tooltip-value="Copy to clipboard" type="button">
+              Copy
+             </button>
+            </td>
+           </tr>
+           <tr data-controller="clipboard">
+            <th scope="row">
+             BLAKE2b-256
+            </th>
+            <td>
+             <code data-clipboard-target="source">
+              b3ca824b1195773ce6166d388573fc106ce56d4a805bd7427b624e063596ec58
+             </code>
+            </td>
+            <td class="table__align-right">
+             <button class="button button--small copy-tooltip copy-tooltip-w" data-action="clipboard#copy" data-clipboard-target="tooltip" data-clipboard-tooltip-value="Copy to clipboard" type="button">
+              Copy
+             </button>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <p>
+          <a href="https://pip.pypa.io/en/stable/topics/secure-installs/#hash-checking-mode" rel="noopener" target="_blank" title="External link">
+           See more details on using hashes here.
+          </a>
+         </p>
+        </div>
+       </div>
+       <div aria-labelledby="file-tab mobile-file-tab" class="vertical-tabs__content" data-project-tabs-target="content" id="beautifulsoup4-4.12.3-py3-none-any.whl" role="tabpanel" tabindex="-1">
+        <h2 class="page-title">
+         File details
+        </h2>
+        <p>
+         Details for the file
+         <code>
+          beautifulsoup4-4.12.3-py3-none-any.whl
+         </code>
+         .
+        </p>
+        <h3>
+         File metadata
+        </h3>
+        <div>
+         <ul>
+          <li>
+           Download URL:
+           <a href="https://files.pythonhosted.org/packages/b1/fe/e8c672695b37eecc5cbf43e1d0638d88d66ba3a44c4d321c796f4e59167f/beautifulsoup4-4.12.3-py3-none-any.whl">
+            beautifulsoup4-4.12.3-py3-none-any.whl
+           </a>
+          </li>
+          <li>
+           Upload date:
+           <time data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false" datetime="2024-01-17T16:53:12+0000">
+            Jan 17, 2024
+           </time>
+          </li>
+          <li>
+           Size: 147.9 kB
+          </li>
+          <li>
+           Tags: Python 3
+          </li>
+          <li>
+           Uploaded using Trusted Publishing? No
+          </li>
+          <li>
+           Uploaded via: python-httpx/0.26.0
+          </li>
+         </ul>
+        </div>
+        <h3>
+         File hashes
+        </h3>
+        <div>
+         <table class="table table--hashes">
+          <caption class="sr-only">
+           Hashes for beautifulsoup4-4.12.3-py3-none-any.whl
+          </caption>
+          <thead>
+           <tr>
+            <th scope="col">
+             Algorithm
+            </th>
+            <th scope="col">
+             Hash digest
+            </th>
+            <th>
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr data-controller="clipboard">
+            <th scope="row">
+             SHA256
+            </th>
+            <td>
+             <code data-clipboard-target="source">
+              b80878c9f40111313e55da8ba20bdba06d8fa3969fc68304167741bbf9e082ed
+             </code>
+            </td>
+            <td class="table__align-right">
+             <button class="button button--small copy-tooltip copy-tooltip-w" data-action="clipboard#copy" data-clipboard-target="tooltip" data-clipboard-tooltip-value="Copy to clipboard" type="button">
+              Copy
+             </button>
+            </td>
+           </tr>
+           <tr data-controller="clipboard">
+            <th scope="row">
+             MD5
+            </th>
+            <td>
+             <code data-clipboard-target="source">
+              47df28fd656b4a8df368d9a915794454
+             </code>
+            </td>
+            <td class="table__align-right">
+             <button class="button button--small copy-tooltip copy-tooltip-w" data-action="clipboard#copy" data-clipboard-target="tooltip" data-clipboard-tooltip-value="Copy to clipboard" type="button">
+              Copy
+             </button>
+            </td>
+           </tr>
+           <tr data-controller="clipboard">
+            <th scope="row">
+             BLAKE2b-256
+            </th>
+            <td>
+             <code data-clipboard-target="source">
+              b1fee8c672695b37eecc5cbf43e1d0638d88d66ba3a44c4d321c796f4e59167f
+             </code>
+            </td>
+            <td class="table__align-right">
+             <button class="button button--small copy-tooltip copy-tooltip-w" data-action="clipboard#copy" data-clipboard-target="tooltip" data-clipboard-tooltip-value="Copy to clipboard" type="button">
+              Copy
+             </button>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <p>
+          <a href="https://pip.pypa.io/en/stable/topics/secure-installs/#hash-checking-mode" rel="noopener" target="_blank" title="External link">
+           See more details on using hashes here.
+          </a>
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+  <footer class="footer">
+   <div class="footer__logo">
+    <img alt="" class="-js-white-cube" src="/static/images/white-cube.2351a86c.svg"/>
+   </div>
+   <div class="footer__menus">
+    <div class="footer__menu">
+     <h2>
+      Help
+     </h2>
+     <nav aria-label="Help navigation">
+      <ul>
+       <li>
+        <a href="https://packaging.python.org/tutorials/installing-packages/" rel="noopener" target="_blank" title="External link">
+         Installing packages
+        </a>
+       </li>
+       <li>
+        <a href="https://packaging.python.org/tutorials/packaging-projects/" rel="noopener" target="_blank" title="External link">
+         Uploading packages
+        </a>
+       </li>
+       <li>
+        <a href="https://packaging.python.org/" rel="noopener" target="_blank" title="External link">
+         User guide
+        </a>
+       </li>
+       <li>
+        <a href="https://www.python.org/dev/peps/pep-0541/" rel="noopener" target="_blank" title="External link">
+         Project name retention
+        </a>
+       </li>
+       <li>
+        <a href="/help/">
+         FAQs
+        </a>
+       </li>
+      </ul>
+     </nav>
+    </div>
+    <div class="footer__menu">
+     <h2>
+      About PyPI
+     </h2>
+     <nav aria-label="About PyPI navigation">
+      <ul>
+       <li>
+        <a href="https://blog.pypi.org" rel="noopener" target="_blank" title="External link">
+         PyPI Blog
+        </a>
+       </li>
+       <li>
+        <a href="https://dtdg.co/pypi" rel="noopener" target="_blank" title="External link">
+         Infrastructure dashboard
+        </a>
+       </li>
+       <li>
+        <a href="/stats/">
+         Statistics
+        </a>
+       </li>
+       <li>
+        <a href="/trademarks/">
+         Logos &amp; trademarks
+        </a>
+       </li>
+       <li>
+        <a href="/sponsors/">
+         Our sponsors
+        </a>
+       </li>
+      </ul>
+     </nav>
+    </div>
+    <div class="footer__menu">
+     <h2>
+      Contributing to PyPI
+     </h2>
+     <nav aria-label="How to contribute navigation">
+      <ul>
+       <li>
+        <a href="/help/#feedback">
+         Bugs and feedback
+        </a>
+       </li>
+       <li>
+        <a href="https://github.com/pypi/warehouse" rel="noopener" target="_blank" title="External link">
+         Contribute on GitHub
+        </a>
+       </li>
+       <li>
+        <a href="https://hosted.weblate.org/projects/pypa/warehouse/" rel="noopener" target="_blank" title="External link">
+         Translate PyPI
+        </a>
+       </li>
+       <li>
+        <a href="/sponsors/">
+         Sponsor PyPI
+        </a>
+       </li>
+       <li>
+        <a href="https://github.com/pypi/warehouse/graphs/contributors" rel="noopener" target="_blank" title="External link">
+         Development credits
+        </a>
+       </li>
+      </ul>
+     </nav>
+    </div>
+    <div class="footer__menu">
+     <h2>
+      Using PyPI
+     </h2>
+     <nav aria-label="Using PyPI navigation">
+      <ul>
+       <li>
+        <a href="https://policies.python.org/python.org/code-of-conduct/" rel="noopener" target="_blank" title="External link">
+         Code of conduct
+        </a>
+       </li>
+       <li>
+        <a href="/security/">
+         Report security issue
+        </a>
+       </li>
+       <li>
+        <a href="https://policies.python.org/pypi.org/Privacy-Notice/" rel="noopener" target="_blank" title="External link">
+         Privacy Notice
+        </a>
+       </li>
+       <li>
+        <a href="https://policies.python.org/pypi.org/Terms-of-Use/" rel="noopener" target="_blank" title="External link">
+         Terms of Use
+        </a>
+       </li>
+       <li>
+        <a href="https://policies.python.org/pypi.org/Acceptable-Use-Policy/" rel="noopener" target="_blank" title="External link">
+         Acceptable Use Policy
+        </a>
+       </li>
+      </ul>
+     </nav>
+    </div>
+   </div>
+   <hr class="footer__divider"/>
+   <div class="footer__text">
+    <p>
+     Status:
+     <a href="https://status.python.org/" rel="noopener" target="_blank" title="External link">
+      <span data-statuspage-domain="https://2p66nmmycsj3.statuspage.io">
+       all systems operational
+      </span>
+     </a>
+    </p>
+    <p>
+     Developed and maintained by the Python community, for the Python community.
+     <br/>
+     <a href="https://donate.pypi.org">
+      Donate today!
+     </a>
+    </p>
+    <p>
+     "PyPI", "Python Package Index", and the blocks logos are registered
+     <a href="/trademarks/">
+      trademarks
+     </a>
+     of the
+     <a href="https://www.python.org/psf-landing" rel="noopener" target="_blank">
+      Python Software Foundation
+     </a>
+     .
+     <br/>
+    </p>
+    <p>
+     © 2024
+     <a href="https://www.python.org/psf-landing/" rel="noopener" target="_blank" title="External link">
+      Python Software Foundation
+     </a>
+     <br/>
+     <a href="/sitemap/">
+      Site map
+     </a>
+    </p>
+   </div>
+   <div class="centered hide-on-desktop">
+    <button class="button button--switch-to-desktop hidden" data-action="viewport-toggle#switchToDesktop" data-viewport-toggle-target="switchToDesktop" type="button">
+     Switch to desktop version
+    </button>
+   </div>
+  </footer>
+  <div class="language-switcher">
+   <form action="/locale/">
+    <ul>
+     <li>
+      <button class="language-switcher__selected" name="locale_id" type="submit" value="en">
+       English
+      </button>
+     </li>
+     <li>
+      <button name="locale_id" type="submit" value="es">
+       español
+      </button>
+     </li>
+     <li>
+      <button name="locale_id" type="submit" value="fr">
+       français
+      </button>
+     </li>
+     <li>
+      <button name="locale_id" type="submit" value="ja">
+       日本語
+      </button>
+     </li>
+     <li>
+      <button name="locale_id" type="submit" value="pt_BR">
+       português (Brasil)
+      </button>
+     </li>
+     <li>
+      <button name="locale_id" type="submit" value="uk">
+       українська
+      </button>
+     </li>
+     <li>
+      <button name="locale_id" type="submit" value="el">
+       Ελληνικά
+      </button>
+     </li>
+     <li>
+      <button name="locale_id" type="submit" value="de">
+       Deutsch
+      </button>
+     </li>
+     <li>
+      <button name="locale_id" type="submit" value="zh_Hans">
+       中文 (简体)
+      </button>
+     </li>
+     <li>
+      <button name="locale_id" type="submit" value="zh_Hant">
+       中文 (繁體)
+      </button>
+     </li>
+     <li>
+      <button name="locale_id" type="submit" value="ru">
+       русский
+      </button>
+     </li>
+     <li>
+      <button name="locale_id" type="submit" value="he">
+       עברית
+      </button>
+     </li>
+     <li>
+      <button name="locale_id" type="submit" value="eo">
+       Esperanto
+      </button>
+     </li>
+     <li>
+      <button name="locale_id" type="submit" value="ko">
+       한국어
+      </button>
+     </li>
+    </ul>
+   </form>
+  </div>
+  <div class="sponsors">
+   <p class="sponsors__title">
+    Supported by
+   </p>
+   <div class="sponsors__divider">
+   </div>
+   <a class="sponsors__sponsor" href="https://aws.amazon.com/" rel="noopener" target="_blank">
+    <img alt="AWS" class="sponsors__image" loading="lazy" src="https://pypi-camo.freetls.fastly.net/ed7074cadad1a06f56bc520ad9bd3e00d0704c5b/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f6177732d77686974652d6c6f676f2d7443615473387a432e706e67"/>
+    <span class="sponsors__name">
+     AWS
+    </span>
+    <span class="sponsors__service">
+     Cloud computing and Security Sponsor
+    </span>
+   </a>
+   <a class="sponsors__sponsor" href="https://www.datadoghq.com/" rel="noopener" target="_blank">
+    <img alt="Datadog" class="sponsors__image" loading="lazy" src="https://pypi-camo.freetls.fastly.net/8855f7c063a3bdb5b0ce8d91bfc50cf851cc5c51/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f64617461646f672d77686974652d6c6f676f2d6668644c4e666c6f2e706e67"/>
+    <span class="sponsors__name">
+     Datadog
+    </span>
+    <span class="sponsors__service">
+     Monitoring
+    </span>
+   </a>
+   <a class="sponsors__sponsor" href="https://www.fastly.com/" rel="noopener" target="_blank">
+    <img alt="Fastly" class="sponsors__image" loading="lazy" src="https://pypi-camo.freetls.fastly.net/df6fe8829cbff2d7f668d98571df1fd011f36192/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f666173746c792d77686974652d6c6f676f2d65684d3077735f6f2e706e67"/>
+    <span class="sponsors__name">
+     Fastly
+    </span>
+    <span class="sponsors__service">
+     CDN
+    </span>
+   </a>
+   <a class="sponsors__sponsor" href="https://careers.google.com/" rel="noopener" target="_blank">
+    <img alt="Google" class="sponsors__image" loading="lazy" src="https://pypi-camo.freetls.fastly.net/420cc8cf360bac879e24c923b2f50ba7d1314fb0/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f676f6f676c652d77686974652d6c6f676f2d616734424e3774332e706e67"/>
+    <span class="sponsors__name">
+     Google
+    </span>
+    <span class="sponsors__service">
+     Download Analytics
+    </span>
+   </a>
+   <a class="sponsors__sponsor" href="https://www.pingdom.com/" rel="noopener" target="_blank">
+    <img alt="Pingdom" class="sponsors__image" loading="lazy" src="https://pypi-camo.freetls.fastly.net/d01053c02f3a626b73ffcb06b96367fdbbf9e230/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f70696e67646f6d2d77686974652d6c6f676f2d67355831547546362e706e67"/>
+    <span class="sponsors__name">
+     Pingdom
+    </span>
+    <span class="sponsors__service">
+     Monitoring
+    </span>
+   </a>
+   <a class="sponsors__sponsor" href="https://getsentry.com/for/python" rel="noopener" target="_blank">
+    <img alt="Sentry" class="sponsors__image" loading="lazy" src="https://pypi-camo.freetls.fastly.net/67af7117035e2345bacb5a82e9aa8b5b3e70701d/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f73656e7472792d77686974652d6c6f676f2d4a2d6b64742d706e2e706e67"/>
+    <span class="sponsors__name">
+     Sentry
+    </span>
+    <span class="sponsors__service">
+     Error logging
+    </span>
+   </a>
+   <a class="sponsors__sponsor" href="https://statuspage.io" rel="noopener" target="_blank">
+    <img alt="StatusPage" class="sponsors__image" loading="lazy" src="https://pypi-camo.freetls.fastly.net/b611884ff90435a0575dbab7d9b0d3e60f136466/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f707970692d6173736574732f73706f6e736f726c6f676f732f737461747573706167652d77686974652d6c6f676f2d5467476c6a4a2d502e706e67"/>
+    <span class="sponsors__name">
+     StatusPage
+    </span>
+    <span class="sponsors__service">
+     Status page
+    </span>
+   </a>
+  </div>
+ </body>
+</html>

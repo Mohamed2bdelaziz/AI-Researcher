@@ -1,0 +1,8 @@
+# this project built on python 3.10
+streamlit==1.37.0
+requests==2.31.0
+beautifulsoup4==4.12.2
+newspaper3k==0.2.8
+trafilatura==1.5.0
+langchain==0.2.17
+langchain-ollama==0.1.0
