@@ -40,7 +40,7 @@ class RateLimiterWithQueue:
             return True
         else:
             for x in range(self.time_window, 0, -1):
-                print(f"Processed queued request for IP: {ip}, witing time {x}s...") #, end='\r')
+                print(f"Processed queued request for IP: {ip}, waiting time {x}s...") #, end='\r')
                 time.sleep(1)
             return True
             # # Deny the request and enqueue it for the next window

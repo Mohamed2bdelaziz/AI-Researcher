@@ -4,6 +4,9 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import os
 from ratelimiter import RateLimiterWithQueue
 import time
+from random import choice
+from headersgenerator import HeadersGenerator
+
 
 class Scrapper:
     """
@@ -18,7 +21,7 @@ class Scrapper:
         self.max_workers = max_workers
         self.ratelimiter = RateLimiterWithQueue()
 
-    def __scrap_one_link__(self, url: str, ip = 'localhost'):
+    def __scrap_one_link__(self, url: str, headers : dict, ip = 'localhost'):
         """
         Fetches and parses the HTML content of a given URL.
 
@@ -40,7 +43,7 @@ class Scrapper:
             # checking the ratelimiter for this ip
             if self.ratelimiter.is_allowed(ip = ip):
                 # Make an HTTP GET request to the URL
-                response = requests.get(url, timeout=self.timeout)
+                response = requests.get(url, headers=headers, timeout=self.timeout)
 
                 # Raise an exception for HTTP errors (4xx or 5xx responses)
                 response.raise_for_status()
@@ -80,10 +83,15 @@ class Scrapper:
         # List to store the results in the same order as the input
         results = [None] * len(urls)
 
+        headersgen = HeadersGenerator()
+        headers = headersgen.get_headers()
+
+        print(f"\nusing user agent heeader ==> \n{headers}\n")
+
         # Function to wrap the private scrapping method for threading
-        def fetch_url(index, url):
+        def fetch_url(index, url, headers=headers):
             try:
-                soup = self.__scrap_one_link__(url)
+                soup = self.__scrap_one_link__(url, headers)
                 return index, soup
             except Exception as e:
                 print(f"Error processing URL at index {index}: {e}")
@@ -107,6 +115,7 @@ if __name__ == '__main__':
         "https://pypi.org/project/strings/",
         "https://pypi.org/project/beautifulsoup4/",
         "https://gpmegypt.com/ar/real-estate/artea-mall-new-cairo",
+        # "https://www.cometoparis.com/tourism-in-paris-s1038"
     ]
 
     # # test of __scrap_one_link__():
